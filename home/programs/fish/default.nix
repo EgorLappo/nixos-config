@@ -30,7 +30,10 @@ in
 {
   programs.fish = {
     enable = true;
-    plugins = [ custom.theme fenv ];
+    plugins = [ 
+      custom.theme 
+      fenv
+    ];
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
