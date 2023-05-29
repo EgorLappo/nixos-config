@@ -75,24 +75,6 @@ in
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
-  # Enable Docker & VirtualBox support.
-  virtualisation = {
-    docker = {
-      enable = true;
-      autoPrune = {
-        enable = true;
-        dates = "weekly";
-      };
-    };
-
-    virtualbox.host = {
-      enable = false;
-      enableExtensionPack = false;
-    };
-  };
-
-  users.extraGroups.vboxusers.members = [ "egor" ];
-
   security.rtkit.enable = true;
 
   services.pipewire = {
@@ -144,7 +126,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.egor = {
     isNormalUser = true;
-    extraGroups = [ "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
     shell = pkgs.fish;
   };
 

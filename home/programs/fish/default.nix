@@ -26,7 +26,6 @@ let
     set fish_greeting
   '' + fzfConfig + themeConfig;
 
-  dc = "${pkgs.docker-compose}/bin/docker-compose";
 in
 {
   programs.fish = {
@@ -39,9 +38,6 @@ in
     shellAliases = {
       inherit dc;
       cat = "bat";
-      dps = "${dc} ps";
-      dcd = "${dc} down --remove-orphans";
-      drm = "docker images -a -q | xargs docker rmi -f";
       du = "${pkgs.ncdu}/bin/ncdu --color dark -rr -x";
       ls = "${pkgs.exa}/bin/exa";
       ll = "ls -a";
