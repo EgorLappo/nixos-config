@@ -47,16 +47,13 @@ in
     };
     extraConfig = gitConfig;
     ignores = [
-      "*.bloop"
-      "*.bsp"
-      "*.metals"
-      "*.metals.sbt"
-      "*metals.sbt"
+      ".RData"
+      ".Rhistory"
+      ".Rproj.user"
+      "*.Rproj"
       "*.direnv"
-      "*.envrc" # there is lorri, nix-direnv & simple direnv; let people decide
-      "*hie.yaml" # ghcide files
-      "*.mill-version" # used by metals
-      "*.jvmopts" # should be local to every project
+      "*.envrc"
+      "*hie.yaml"
     ];
 
     userEmail = "elappo@stanford.edu";
