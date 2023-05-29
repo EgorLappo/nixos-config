@@ -8,13 +8,12 @@
 
   # Use the GRUB 2 boot loader.
   boot = {
+    initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "sr_mod" ];
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
-      grub = {
-        enable = true;
-        device = "/dev/nvme0n1"; # or "nodev" for efi only
-        version = 2;
-      };
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot/efi";
     };
   };
 

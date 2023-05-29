@@ -1,16 +1,15 @@
 { pkgs, ... }:
 
 {
-  # TODO: these are dummy file systems, get the proper one
-  fileSystems."/boot" =
+  fileSystems."/boot/efi" =
     {
-      device = "/dev/disk/by-uuid/7BB3-09C5";
+      device = "/dev/disk/by-uuid/9363-8123";
       fsType = "vfat";
     };
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/0fddb262-13c1-46b1-9a5d-216766f47498";
+      device = "/dev/disk/by-uuid/edd1b02d-7464-4ee2-97ad-f1fd9af6a30d";
       fsType = "ext4";
     };
 }
