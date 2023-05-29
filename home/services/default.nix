@@ -1,0 +1,6 @@
+let
+  more = { };
+in
+[
+  ./picom
+]
