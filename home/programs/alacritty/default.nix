@@ -35,7 +35,7 @@ in
   programs.alacritty = {
     enable = true;
     settings = {
-      inherit tokyoNightColors;
+      inherit tokyoNightColors. schemes;
       selection.save_to_clipboard = true;
       shell.program = "${pkgs.fish}/bin/fish";
       colors = "*tokyo-night";
