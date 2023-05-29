@@ -26,14 +26,16 @@ let
     set fish_greeting
   '' + fzfConfig + themeConfig;
 
+  myPlugins = with pkgs.fishPlugins; [
+    fenv
+    fzf-fish
+    z
+  ];
 in
 {
   programs.fish = {
     enable = true;
-    plugins = [ 
-      custom.theme 
-      fenv
-    ];
+    plugins = [ custom.theme ] ++ myPlugins;
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
