@@ -17,7 +17,7 @@ pre_home() {
 
   # Desktop pic
   mkdir -p $HOME/Pictures/
-  cp imgs/nixos.png $HOME/Pictures/
+  cp imgs/nix-wp.png $HOME/Pictures/
 
   # Nix daemon config for normal user
   mkdir -p $HOME/.config/nix
