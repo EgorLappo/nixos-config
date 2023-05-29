@@ -50,6 +50,7 @@ let
   };
 in
 [
+  ./alacritty
   ./git
   ./fish
   ./neofetch
