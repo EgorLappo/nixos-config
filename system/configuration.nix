@@ -135,20 +135,6 @@ in
     #   enable = true;
     #   drivers = [ pkgs.epson-escpr ];
     # };
-
-    # Remote desktop protocol
-    xrdp = {
-      enable = true;
-      defaultWindowManager = "xmonad";
-      openFirewall = true;
-      #package = pkgs.xrdp.overrideAttrs (old: {
-      #postInstall = old.postInstall + ''
-      #echo ">>>>>>>>> INI file"
-      #cat $out/etc/xrdp/xrdp.ini
-      #echo "<<<<<<<<< INI file"
-      #'';
-      #});
-    };
   };
 
   # Making fonts accessible to applications.
