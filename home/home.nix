@@ -11,7 +11,6 @@ let
     calibre # e-book reader
     dconf2nix # dconf (gnome) files to nix converter
     dig # dns command-line tool
-    docker-compose # docker manager
     drawio # diagram design
     duf # disk usage/free utility
     exa # a better `ls`
@@ -26,16 +25,10 @@ let
     nix-index # locate packages containing certain nixpkgs
     nix-output-monitor # nom: monitor nix commands
     ouch # painless compression and decompression for your terminal
-    pavucontrol # pulseaudio volume control
-    paprefs # pulseaudio preferences
-    pasystray # pulseaudio systray
     playerctl # music player controller
     prettyping # a nicer ping
-    pulsemixer # pulseaudio mixer
     ranger # terminal file explorer
     ripgrep # fast grep
-    simple-scan # scanner gui
-    tdesktop # telegram messaging client
     tldr # summary of a man page
     tree # display files in a tree view
     vlc # media player
@@ -51,8 +44,6 @@ in
 
   imports = builtins.concatMap import [
     ./programs
-    ./services
-    ./themes
   ];
 
   xdg = {

@@ -7,13 +7,6 @@ let
     inherit fish-bobthefish-theme fish-keytool-completions;
   };
 
-  libOverlay = f: p: rec {
-    libx = import ../lib { inherit (p) lib; };
-    lib = p.lib.extend (_: _: {
-      inherit (libx) removeNewline secretManager;
-    });
-  };
-
   pkgs = import nixpkgs {
     inherit system;
 
@@ -21,7 +14,6 @@ let
 
     overlays = [
       fishOverlay
-      libOverlay
       nurpkgs.overlay
     ];
   };
