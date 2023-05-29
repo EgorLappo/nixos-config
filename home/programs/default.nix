@@ -50,14 +50,11 @@ let
   };
 in
 [
-  ./alacritty
-  ./browsers/firefox.nix
   ./git
   ./fish
   ./neofetch
   ./neovim-ide
   ./ngrok
-  ./rofi
   ./xmonad
   more
 ]

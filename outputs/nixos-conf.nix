@@ -12,7 +12,7 @@ let
 in
 {
   nixos-vm = nixosSystem {
-    inherit lib pkgs system;
+    inherit pkgs system;
     specialArgs = { inherit inputs; };
     modules = [
       ../system/machine/nixos-vm
