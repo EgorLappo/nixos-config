@@ -33,7 +33,25 @@ in
     settings = {
       selection.save_to_clipboard = true;
       shell.program = "${pkgs.fish}/bin/fish";
+
       colors = tokyo-night;
+
+      font = {
+        normal = {
+          family = "JetBrainsMono Nerd Font";
+          style = "Medium";
+        };
+        size = fontSize;
+      };
+
+      window = {
+        decorations = "full";
+        opacity = 0.85;
+        padding = {
+          x = 5;
+          y = 5;
+        };
+      };
     };
   };
 }
