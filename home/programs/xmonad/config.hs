@@ -8,5 +8,5 @@ main = do
     }
 
 myTerminal    = "alacritty"
-myModMask     = mod4Mask -- Win key or Super_L
+myModMask     = mod1Mask -- Win key or Super_L
 myBorderWidth = 3

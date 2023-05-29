@@ -1,21 +1,5 @@
 { pkgs, lib, specialArgs, ... }:
 
-let
-  extra = ''
-    set +x
-    ${pkgs.util-linux}/bin/setterm -blank 0 -powersave off -powerdown 0
-    ${pkgs.xorg.xset}/bin/xset s off
-    ${pkgs.xcape}/bin/xcape -e "Hyper_L=Tab;Hyper_R=backslash"
-    ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
-  '';
-
-  polybarOpts = ''
-    ${pkgs.nitrogen}/bin/nitrogen --restore &
-    ${pkgs.pasystray}/bin/pasystray &
-    ${pkgs.blueman}/bin/blueman-applet &
-    ${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable --indicator &
-  '';
-in
 {
   xresources.properties = {
     "Xft.dpi" = 180;
@@ -29,10 +13,6 @@ in
   };
 
   home.packages = with pkgs; [
-    dialog # Dialog boxes on the terminal (to show key bindings)
-    networkmanager_dmenu # networkmanager on dmenu
-    networkmanagerapplet # networkmanager applet
-    nitrogen # wallpaper manager
     xcape # keymaps modifier
     xorg.xkbcomp # keymaps modifier
     xorg.xmodmap # keymaps modifier
@@ -41,8 +21,6 @@ in
 
   xsession = {
     enable = true;
-
-    initExtra = extra + polybarOpts;
 
     windowManager.xmonad = {
       enable = true;
