@@ -35,20 +35,15 @@ let
 
   custom = pkgs.callPackage ./plugins.nix { };
 
-  fenv = {
-    inherit (pkgs.fishPlugins.foreign-env) src;
-    name = "foreign-env";
-  };
-
   fishConfig = ''
     bind \t accept-autosuggestion
     set fish_greeting
-  '' + fzfConfig + themeConfig;
-
+  '' + fzfConfig + themeConfig + tokyoNightColors;
+  
   myPlugins = with pkgs.fishPlugins; [
-    fenv
-    fzf-fish
-    z
+    { name = "foreign-env"; src = foreign-env.src; }
+    { name = "z"; src = z.src; }
+    { name = "fzf-fish"; src = fzf-fish.src; }
   ];
 in
 {
