@@ -3,13 +3,13 @@
 {
   fileSystems."/boot/efi" =
     {
-      device = "/dev/disk/by-uuid/C1F9-0E15";
+      device = "/dev/disk/by-uuid/3D9D-728F";
       fsType = "vfat";
     };
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/a2135e99-fd56-47e4-8409-91a4bed4a381";
+      device = "/dev/disk/by-uuid/0c9629f8-b4c8-43b1-a5b8-d08c58c156e1";
       fsType = "ext4";
     };
 }
