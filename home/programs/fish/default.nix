@@ -36,7 +36,6 @@ in
       any-nix-shell fish --info-right | source
     '';
     shellAliases = {
-      inherit dc;
       cat = "bat";
       du = "${pkgs.ncdu}/bin/ncdu --color dark -rr -x";
       ls = "${pkgs.exa}/bin/exa";
