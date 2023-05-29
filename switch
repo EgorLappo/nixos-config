@@ -1,0 +1,38 @@
+#! /usr/bin/env bash
+
+# Shows the output of every command
+set +x
+
+activateHM() {
+  HOME_MANAGER_BACKUP_EXT=bak result/activate
+  hm-changes-report
+}
+
+rebuild_home() {
+  nix build .#homeConfigurations.nixos-vm.activationPackage
+  activateHM
+}
+
+rebuild_system() {
+  # nix build .#nixosConfigurations.tongfang-amd.config.system.build.toplevel
+  # sudo result/bin/switch-to-configuration switch
+  sudo nixos-rebuild switch --flake .#nixos-vm
+}
+
+restart_X() {
+  echo "⚠️ Restarting X11 (requires authentication) ⚠️"
+  systemctl restart display-manager
+}
+
+case $1 in
+  "home")
+    rebuild_home;;
+  "restart-x")
+    restart_X;;
+  "update-fish")
+    fish -c fish_update_completions;;
+  "system")
+    rebuild_system;;
+  *)
+    echo "error";;
+esac
