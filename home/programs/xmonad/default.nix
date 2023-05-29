@@ -9,8 +9,6 @@ let
     ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
   '';
 
-  hdmiExtra = if specialArgs.hidpi then xrandrOps else "";
-
   polybarOpts = ''
     ${pkgs.nitrogen}/bin/nitrogen --restore &
     ${pkgs.pasystray}/bin/pasystray &
@@ -44,7 +42,7 @@ in
   xsession = {
     enable = true;
 
-    initExtra = extra + polybarOpts + hdmiExtra;
+    initExtra = extra + polybarOpts;
 
     windowManager.xmonad = {
       enable = true;
