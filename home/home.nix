@@ -67,7 +67,6 @@ in
     packages = defaultPkgs;
 
     sessionVariables = {
-      DISPLAY = ":0";
       EDITOR = "nvim";
     };
   };

@@ -15,7 +15,7 @@ let
 
   mainBar = if specialArgs.hidpi then hdmiBar else laptopBar;
 
-  openGithub = "${pkgs.firefox-beta-bin}/bin/firefox -new-tab https\\://github.com/notifications";
+  openGithub = "${pkgs.firefox}/bin/firefox -new-tab https\\://github.com/notifications";
 
   mypolybar = pkgs.polybar.override {
     alsaSupport = true;
@@ -42,14 +42,6 @@ let
     exec = ${bluetoothScript}/bin/bluetooth-ctl
     tail = true
     click-left = ${bluetoothScript}/bin/bluetooth-ctl --toggle &
-  '';
-
-  github = ''
-    [module/clickable-github]
-    inherit = module/github
-    token = ''${file:${../../secrets/github-token}}
-    user = gvolpe
-    label = %{A1:${openGithub}:}  %notifications%%{A}
   '';
 
   keyboard = ''
@@ -80,7 +72,7 @@ let
     tail = true
   '';
 
-  customMods = mainBar + bctl + github + keyboard + mpris + xmonad;
+  customMods = mainBar + bctl + keyboard + mpris + xmonad;
 in
 {
   home.packages = with pkgs; [
