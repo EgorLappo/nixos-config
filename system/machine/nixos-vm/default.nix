@@ -25,4 +25,22 @@
   #   device = "/dev/nvme0n1p3";
   #   fsType = "ext4";
   # };
+
+  services.xserver = {
+    xrandrHeads = [
+      {
+        output = "Virtual-1";
+        primary = true;
+        monitorConfig = ''
+          Option "PreferredMode" "2560x1440"
+          Option "Position" "0 0"
+        '';
+      }
+
+    ];
+    resolutions = [
+      { x = 1920; y = 1080; }
+      { x = 2560; y = 1440; }
+    ];
+  };
 }
