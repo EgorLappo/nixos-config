@@ -80,7 +80,7 @@ let
     tail = true
   '';
 
-  customMods = mainBar + bctl + cal + github + keyboard + mpris + xmonad;
+  customMods = mainBar + bctl + github + keyboard + mpris + xmonad;
 in
 {
   home.packages = with pkgs; [
