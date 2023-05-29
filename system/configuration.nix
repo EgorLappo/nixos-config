@@ -131,10 +131,10 @@ in
     sshd.enable = true;
 
     # Enable CUPS to print documents.
-    printing = {
-      enable = true;
-      drivers = [ pkgs.epson-escpr ];
-    };
+    # printing = {
+    #   enable = true;
+    #   drivers = [ pkgs.epson-escpr ];
+    # };
 
     # Remote desktop protocol
     xrdp = {
