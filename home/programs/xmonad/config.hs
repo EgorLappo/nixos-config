@@ -6,7 +6,8 @@ import           XMonad.Util.Ungrab
 
 import           XMonad.Hooks.EwmhDesktops
 
-import           XMonad.Actions.SpawnOn      (manageSpawn, spawnOn)
+import           XMonad.Actions.SpawnOn
+
 import qualified XMonad.StackSet             as W
 
 main = (xmonad . ewmhFullscreen . ewmh) myConfig
@@ -34,9 +35,9 @@ screenLocker = "betterlockscreen -l dim"
 screenshot = "scrot -s -f '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Pictures/screenshots/'"
 
 myKeybindings =
-  [ ("M-S-l", spawnOn screenLocker)
-  , ("M-p", spawnOn appLauncher)
-  , ("M-f", spawnOn "firefox -P 'default'")
+  [ ("M-S-l", spawn screenLocker)
+  , ("M-p", spawn appLauncher)
+  , ("M-f", spawn "firefox -P 'default'")
   , ("M-S-t", namedScratchpadAction scratchpads "htop")
   , ("M-S-s", unGrab *> spawn screenshot)
   ]
