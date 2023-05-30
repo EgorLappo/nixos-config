@@ -39,6 +39,7 @@
 
             [greeter-theme]
             background-color = "#1A1B26"
+            background-image-size = "cover"
             window-color = "#A9B1D6"
           '';
         };
