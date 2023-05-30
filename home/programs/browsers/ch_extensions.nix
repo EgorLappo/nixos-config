@@ -4,4 +4,5 @@
   google-meet-grid = "kklailfgofogmmdlhgmjgenehkjoioip";
   google-translate = "aapbdbdomjkkjkaonfhkkikfgjllcleb";
   picture-in-picture = "hkgfoiooedgoejojocmhlaklaeopbecg";
+  tokyonight = "enpfonmmpgoinjpglildebkaphbhndek";
 }

@@ -2,6 +2,7 @@ import           XMonad
 
 import           XMonad.Util.EZConfig
 import           XMonad.Util.Ungrab
+import           XMonad.Util.Cursor
 
 import           XMonad.Hooks.EwmhDesktops
 import           XMonad.Hooks.FadeInactive
@@ -32,6 +33,7 @@ main' dbus = (xmonad . docks . ewmhFullscreen . ewmh) myConfig
       , manageHook  = manageHook def <+> myManageHook
       , layoutHook  = myLayoutHook
       , logHook     = myPolybarLogHook dbus
+      , startupHook = setDefaultCursor xC_left_ptr
       , borderWidth = myBorderWidth
       , normalBorderColor  = myNormalBorderColor
       , focusedBorderColor = myFocusedBorderColor
