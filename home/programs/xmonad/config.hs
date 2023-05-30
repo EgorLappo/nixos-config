@@ -102,4 +102,5 @@ polybarHook dbus =
           , ppTitle           = wrapper purple . shorten 90
           }
 
+myLogHook = fadeInactiveLogHook 0.9
 myPolybarLogHook dbus = myLogHook <+> dynamicLogWithPP (polybarHook dbus)
