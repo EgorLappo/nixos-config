@@ -16,6 +16,9 @@ let
       "https://gitlab.com/".insteadOf = "gl:";
       "ssh://git@gitlab.com".pushInsteadOf = "gl:";
     };
+
+    credential.helper = "${ pkgs.git.override {withLibsecret = true; }}/bin/git-credential-libsecret";
+
   };
 
   rg = "${pkgs.ripgrep}/bin/rg";
