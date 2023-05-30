@@ -3,8 +3,7 @@ import           XMonad
 import           XMonad.Util.EZConfig
 import           XMonad.Util.Ungrab
 
-main = do
-  xmonad $ def
+main = xmonad $ def
     { terminal    = myTerminal
     , modMask     = myModMask
     , borderWidth = myBorderWidth
