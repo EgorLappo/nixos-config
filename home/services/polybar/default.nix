@@ -5,7 +5,7 @@ let
 
   default-modules = builtins.readFile ./default_modules.ini;
 
-  wm-bar = builtins.readFile ./wm_config.ini;
+  vm-bar = builtins.readFile ./vm_config.ini;
 in
 {
   home.packages = with pkgs; [
@@ -15,7 +15,10 @@ in
 
   services.polybar = {
     enable = true;
-    config = colors + wm-bar + default-modules;
+
+    config = ./config.ini;
+
+    extraConfig = colors + vm-bar + default-modules;
 
     script = ''
       polybar vm &
