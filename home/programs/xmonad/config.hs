@@ -46,5 +46,5 @@ myKeybindings =
 -- scratchpads
 -- https://eyenx.ch/2020/05/02/using-named-scratchpads-with-xmonad/
 scratchpads =
-  [ NS "htop" "alacritty -e htop" (title =? "htop") (customFloating $ W.RationalRect (2/6) (2/6) (2/6) (2/6))
+  [ NS "htop" "alacritty --class=htop -e htop" (resource =? "htop") (customFloating $ W.RationalRect (2/6) (2/6) (2/6) (2/6))
   ]
