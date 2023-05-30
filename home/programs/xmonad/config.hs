@@ -54,7 +54,7 @@ screenshot = "scrot -s -f '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Pictures/screensho
 myKeybindings =
   [ ("M-S-l", spawn screenLocker)
   , ("M-p", spawn appLauncher)
-  , ("M-f", spawn "firefox -P 'default'")
+  , ("M-w", spawn "chromium")
   , ("M-S-t", namedScratchpadAction scratchpads "htop")
   , ("M-S-s", unGrab *> spawn screenshot)
   ]

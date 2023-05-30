@@ -51,7 +51,7 @@ let
 in
 [
   ./alacritty
-  ./browsers/firefox.nix
+  # ./browsers/firefox.nix
   ./browsers/chromium.nix
   ./git
   ./fish
