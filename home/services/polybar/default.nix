@@ -1,16 +1,7 @@
 { config, pkgs, ... }:
 let
   # tokyonight colors
-  colors = ''
-    [colors]
-    background = #1A1B26
-    background-alt = #444B6A
-    foreground = #A9B1D6
-    primary = #AD8EE6
-    secondary = #449DAB
-    alert = #F7768E
-    disabled = #787C99
-  '';
+  colors = builtins.readFile ./colors.ini;
 
   default-modules = ''
     [module/xworkspaces]
