@@ -5,7 +5,7 @@
     inactiveOpacity = 0.8;
     backend = "glx";
     fade = true;
-    opacityRule = [ "100:name *= 'i3lock'" ];
+    opacityRules = [ "100:name *= 'i3lock'" ];
     fadeDelta = 5;
     shadow = true;
     shadowOpacity = 0.75;
