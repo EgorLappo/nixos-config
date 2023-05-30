@@ -51,6 +51,7 @@ let
 in
 [
   ./alacritty
+  ./browsers
   ./git
   ./fish
   ./neofetch
