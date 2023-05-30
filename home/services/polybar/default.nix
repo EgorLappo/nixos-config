@@ -14,7 +14,7 @@ in
   services.polybar = {
     enable = true;
     config = ./wm_config.ini;
-    extraConfig = colors + default-modules;
+    extraConfig = default-modules + colors;
 
     script = ''
       polybar vm &
