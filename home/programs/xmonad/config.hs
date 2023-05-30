@@ -1,6 +1,7 @@
 import           XMonad
 
 import           XMonad.Util.EZConfig
+import           XMonad.Util.NamedScratchpad
 import           XMonad.Util.Ungrab
 
 import           XMonad.Hooks.EwmhDesktops
@@ -28,11 +29,11 @@ screenLocker = "betterlockscreen -l dim"
 screenshot = "shutter -f -o ~/Pictures/screenshots/%Y-%m-%d-%T.png"
 
 myKeybindings =
-  [ ("M-S-l", unGrab *> spawn screenLocker)
+  [ ("M-S-l", spawn screenLocker)
   , ("M-p", spawn appLauncher)
   , ("M-f", spawn "firefox -P 'default'")
   , ("M-S-t", namedScratchpadAction scratchpads "htop")
-  , ("M-S-s", spawn screenshot)
+  , ("M-S-s", unGrab *> spawn screenshot)
   ]
 
 
