@@ -10,7 +10,7 @@
     enable = true;
 
     script = ''
-      polybar --reload &
+      polybar example --reload &
     '';
   };
 }
