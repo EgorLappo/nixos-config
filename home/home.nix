@@ -22,7 +22,9 @@ let
     nitch # minimal system information fetch
     nitrogen # wallpaper setter
     nix-index # locate packages containing certain nixpkgs
+    nix-init # initialize nix projects
     nix-output-monitor # nom: monitor nix commands
+    nurl # nix url prefetcher
     ouch # painless compression and decompression for your terminal
     pavucontrol # pulseaudio volume control
     paprefs # pulseaudio preferences
