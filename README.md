@@ -16,3 +16,8 @@ Two main details. First, `Alt-Space` switches between two versions: simple regul
 
 * `nswitch` is an alias for `nixos-rebuild switch` with all the arguments
 * `hswitch` works similarly, but for `home-manager switch`
+
+### Programs
+
+* `bat` instead of `cat`, `rg` instead of `grep`
+

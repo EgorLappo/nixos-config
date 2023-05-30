@@ -60,5 +60,6 @@ in
   ./ngrok
   ./rofi
   ./xmonad
+  ./zathura
   more
 ]
