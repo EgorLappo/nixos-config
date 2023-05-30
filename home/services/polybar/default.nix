@@ -10,7 +10,7 @@
     enable = true;
 
     script = ''
-      polybar  2>${config.xdg.configHome}/polybar/logs/bottom.log & disown
+      polybar --reload &
     '';
   };
 }

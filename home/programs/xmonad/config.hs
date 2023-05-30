@@ -30,6 +30,7 @@ main' dbus = (xmonad . docks . ewmhFullscreen . ewmh) myConfig
       { terminal    = myTerminal
       , modMask     = myModMask
       , manageHook  = manageHook def <+> myManageHook
+      , layoutHook  = myLayoutHook
       , logHook     = myPolybarLogHook dbus
       , borderWidth = myBorderWidth
       , normalBorderColor  = myNormalBorderColor
@@ -58,6 +59,7 @@ myKeybindings =
   , ("M-S-s", unGrab *> spawn screenshot)
   ]
 
+myLayoutHook = avoidStruts $ layoutHook def
 
 -- scratchpads
 -- https://eyenx.ch/2020/05/02/using-named-scratchpads-with-xmonad/
