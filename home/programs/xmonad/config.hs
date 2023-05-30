@@ -49,7 +49,7 @@ myManageHook  = (namedScratchpadManageHook scratchpads) <+> manageSpawn <+> hook
 -- borders
 myBorderWidth = 3
 myNormalBorderColor  = "#444444"
-myFocusedBorderColor = "#dddddd"
+myFocusedBorderColor = "#777777"
 
 appLauncher  = "rofi -modi drun,ssh,window -show drun -show-icons"
 screenLocker = "betterlockscreen -l dim"
