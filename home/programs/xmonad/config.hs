@@ -4,19 +4,19 @@ import           XMonad.Util.EZConfig
 import           XMonad.Util.Ungrab
 
 import           XMonad.Hooks.EwmhDesktops
+import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
-import          XMonad.Hooks.ManageDocks
 
 import           XMonad.Actions.SpawnOn
 
 -- import for scratchpad
-import           XMonad.Util.NamedScratchpad
 import qualified XMonad.StackSet             as W
+import           XMonad.Util.NamedScratchpad
 
--- imports for polybar 
-import qualified Codec.Binary.UTF8.String              as UTF8
-import qualified DBus                                  as D
-import qualified DBus.Client                           as D
+-- imports for polybar
+import qualified Codec.Binary.UTF8.String    as UTF8
+import qualified DBus                        as D
+import qualified DBus.Client                 as D
 import           XMonad.Hooks.DynamicLog
 
 main :: IO ()
@@ -38,9 +38,7 @@ myConfig = def
 myTerminal    = "alacritty"
 myModMask     = mod1Mask
 myManageHook  = (namedScratchpadManageHook scratchpads) <+> manageSpawn <+> hookList
-  where hookList = composeAll 
-    [ isDialog --> doFloat
-    ]
+  where hookList = composeAll [ isDialog --> doFloat ]
 
 -- borders
 myBorderWidth = 3
