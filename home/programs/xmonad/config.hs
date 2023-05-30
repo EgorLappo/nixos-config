@@ -38,7 +38,6 @@ myKeybindings =
 
 -- scratchpads
 
-scratchpads = [
--- run htop in xterm, find it by title, use default floating window placement
-    NS "htop" "alacritty -e htop" (title =? "htop") defaultFloating,
+scratchpads =
+  [ NS "htop" "alacritty -e htop" (title =? "htop") defaultFloating
   ]
