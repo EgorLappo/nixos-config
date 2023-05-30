@@ -1,6 +1,7 @@
-{ pkgs, lib, stdenv, ... }:
+{ pkgs, lib, stdenv, specialArgs, ... }:
 
 let
+  inherit (specialArgs) addons;
 
   extensions = with addons; [
     bitwarden
