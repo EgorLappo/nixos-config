@@ -1,5 +1,10 @@
 { pkgs, lib, specialArgs, ... }:
-
+let
+  wallpaper = ''
+    betterlockscreen -u ~/.dotfiles/img/lock.jpg
+    feh --bg-fill --no-fehbg ~/.dotfiles/img/nix-wp.png
+  '';
+in
 {
   xresources.properties = {
     "Xft.dpi" = 180;
@@ -21,6 +26,8 @@
 
   xsession = {
     enable = true;
+
+    initExtra = wallpaper;
 
     windowManager.xmonad = {
       enable = true;
