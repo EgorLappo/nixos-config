@@ -8,19 +8,20 @@ import           XMonad.Hooks.EwmhDesktops
 import           XMonad.Hooks.FadeInactive
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
+import           XMonad.Hooks.WindowSwallowing
 
 import           XMonad.Actions.SpawnOn
 
 import           XMonad.Layout.NoBorders
 
 -- import for scratchpad
-import qualified XMonad.StackSet             as W
+import qualified XMonad.StackSet               as W
 import           XMonad.Util.NamedScratchpad
 
 -- imports for polybar
-import qualified Codec.Binary.UTF8.String    as UTF8
-import qualified DBus                        as D
-import qualified DBus.Client                 as D
+import qualified Codec.Binary.UTF8.String      as UTF8
+import qualified DBus                          as D
+import qualified DBus.Client                   as D
 import           XMonad.Hooks.DynamicLog
 
 main :: IO ()
@@ -36,6 +37,7 @@ main' dbus = (xmonad . docks . ewmhFullscreen . ewmh) myConfig
       , layoutHook  = myLayoutHook
       , logHook     = myPolybarLogHook dbus
       , startupHook = setDefaultCursor xC_left_ptr
+      , handleEventHook = myHandleEventHook
       , borderWidth = myBorderWidth
       , normalBorderColor  = myNormalBorderColor
       , focusedBorderColor = myFocusedBorderColor
@@ -45,6 +47,7 @@ myTerminal    = "alacritty"
 myModMask     = mod1Mask
 myManageHook  = (namedScratchpadManageHook scratchpads) <+> manageSpawn <+> hookList
   where hookList = composeAll [ isDialog --> doFloat ]
+myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 
 -- borders
 myBorderWidth = 3

@@ -22,7 +22,7 @@ let
     };
 
     #credential.helper = "${ pkgs.git.override {withLibsecret = true; }}/bin/git-credential-libsecret";
-    credential.helper = "libsecret";
+    credential.helper = "cache --timeout=3600";
   };
 
   rg = "${pkgs.ripgrep}/bin/rg";

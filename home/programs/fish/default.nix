@@ -57,7 +57,7 @@ in
     shellAliases = {
       c = "clear";
       cat = "bat --theme=base16";
-      bat = "bat --theme=base16";
+      bat = "bat --theme=brease16";
       v = "nvim";
       nswitch = "sudo nixos-rebuild switch --flake ~/.dotfiles#nixos-vm";
       hswitch = "home-manager switch --flake ~/.dotfiles";
