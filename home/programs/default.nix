@@ -56,6 +56,7 @@ in
   ./neofetch
   ./neovim-ide
   ./ngrok
+  ./rofi
   ./xmonad
   more
 ]
