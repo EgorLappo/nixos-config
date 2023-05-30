@@ -3,9 +3,23 @@ let
   # tokyonight colors
   colors = builtins.readFile ./colors.ini;
 
+  vm-bar = builtins.readFile ./vm_config.ini;
+
   default-modules = builtins.readFile ./default_modules.ini;
 
-  vm-bar = builtins.readFile ./vm_config.ini;
+  other-modules = ''
+    [module/xmonad]
+    type = custom/script
+    exec = ${pkgs.xmonad-log}/bin/xmonad-log
+    tail = true
+  '';
+
+  mypolybar = pkgs.polybar.override {
+    alsaSupport = true;
+    githubSupport = true;
+    mpdSupport = true;
+    pulseSupport = true;
+  };
 in
 {
   home.packages = with pkgs; [
@@ -15,7 +29,7 @@ in
 
   services.polybar = {
     enable = true;
-
+    package = mypolybar;
     config = ./config.ini;
 
     extraConfig = colors + vm-bar + default-modules;
