@@ -75,7 +75,7 @@ myKeybindings =
   ]
 
 myLayoutHook = smartBorders . smartSpacing 5 . avoidStruts $
-    centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid
+    centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid ||| Full
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
