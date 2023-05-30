@@ -74,7 +74,7 @@ myKeybindings =
   , ("M-S-s", unGrab *> spawn screenshot)
   ]
 
-myLayoutHook = smartBorders . smartSpacing 10 . avoidStruts $
+myLayoutHook = smartBorders . smartSpacing 5 . avoidStruts $
     centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid
   where
     tiled = Tall nmaster delta ratio
