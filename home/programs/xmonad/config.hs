@@ -12,20 +12,21 @@ import           XMonad.Hooks.WindowSwallowing
 
 import           XMonad.Actions.SpawnOn
 
+import           XMonad.Layout.CenteredIfSingle
 import           XMonad.Layout.Grid
 import           XMonad.Layout.NoBorders
 
 -- import for scratchpad
-import qualified XMonad.StackSet               as W
+import qualified XMonad.StackSet                as W
 import           XMonad.Util.NamedScratchpad
 
 -- imports for polybar
-import qualified Codec.Binary.UTF8.String      as UTF8
-import qualified DBus                          as D
-import qualified DBus.Client                   as D
+import qualified Codec.Binary.UTF8.String       as UTF8
+import qualified DBus                           as D
+import qualified DBus.Client                    as D
 import           XMonad.Hooks.DynamicLog
 
-import qualified XMonad.Util.Hacks             as Hacks
+import qualified XMonad.Util.Hacks              as Hacks
 
 main :: IO ()
 main = mkDbusClient >>= main'
