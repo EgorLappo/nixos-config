@@ -28,7 +28,8 @@
       };
 
       displayManager = {
-        lightdm.greeters.tiny.enable = true;
+        lightdm.greeters.mini.enable = true;
+        lightdm.greeters.mini.user = "egor";
 
         defaultSession = "none+xmonad";
       };
