@@ -20,6 +20,7 @@ let
     betterlockscreen # fast lockscreen based on i3lock
     ncdu # disk space info (a better du)
     nitch # minimal system information fetch
+    nitrogen # wallpaper setter
     nix-index # locate packages containing certain nixpkgs
     nix-output-monitor # nom: monitor nix commands
     ouch # painless compression and decompression for your terminal

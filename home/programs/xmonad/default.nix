@@ -1,8 +1,7 @@
 { pkgs, lib, specialArgs, ... }:
 let
   wallpaper = ''
-    betterlockscreen -u ~/.dotfiles/img/lock.jpg
-    feh --bg-fill --no-fehbg ~/.dotfiles/img/nix-wp.png
+    ${pkgs.nitrogen}/bin/nitrogen --restore &
   '';
 in
 {
