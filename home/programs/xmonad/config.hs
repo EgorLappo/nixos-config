@@ -25,16 +25,16 @@ main = mkDbusClient >>= main'
 
 main' :: D.Client -> IO ()
 main' dbus = (xmonad . docks . ewmhFullscreen . ewmh) myConfig
-
-myConfig = def
-    { terminal    = myTerminal
-    , modMask     = myModMask
-    , manageHook  = manageHook def <+> myManageHook
-    , logHook     = myPolybarLogHook dbus
-    , borderWidth = myBorderWidth
-    , normalBorderColor  = myNormalBorderColor
-    , focusedBorderColor = myFocusedBorderColor
-    } `additionalKeysP` myKeybindings
+ where
+    myConfig = def
+      { terminal    = myTerminal
+      , modMask     = myModMask
+      , manageHook  = manageHook def <+> myManageHook
+      , logHook     = myPolybarLogHook dbus
+      , borderWidth = myBorderWidth
+      , normalBorderColor  = myNormalBorderColor
+      , focusedBorderColor = myFocusedBorderColor
+      } `additionalKeysP` myKeybindings
 
 myTerminal    = "alacritty"
 myModMask     = mod1Mask
