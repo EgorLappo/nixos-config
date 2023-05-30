@@ -28,7 +28,7 @@
       };
 
       displayManager = {
-        lightdm.background = ./imgs/lock.jpg;
+        lightdm.background = ../../imgs/lock.jpg;
 
         lightdm.greeters.mini = {
           enable = true;
