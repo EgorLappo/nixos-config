@@ -26,7 +26,7 @@ myFocusedBorderColor = "#dddddd"
 
 appLauncher  = "rofi -modi drun,ssh,window -show drun -show-icons"
 screenLocker = "betterlockscreen -l dim"
-screenshot = "shutter -f -o ~/Pictures/screenshots/%Y-%m-%d-%T.png"
+screenshot = "scrot -s"
 
 myKeybindings =
   [ ("M-S-l", spawn screenLocker)
