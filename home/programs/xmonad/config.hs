@@ -24,6 +24,8 @@ import qualified DBus                          as D
 import qualified DBus.Client                   as D
 import           XMonad.Hooks.DynamicLog
 
+import qualified XMonad.Util.Hacks             as Hacks
+
 main :: IO ()
 main = mkDbusClient >>= main'
 
@@ -38,19 +40,22 @@ main' dbus = (xmonad . docks . ewmhFullscreen . ewmh) myConfig
       , logHook     = myPolybarLogHook dbus
       , startupHook = setDefaultCursor xC_left_ptr
       , handleEventHook = myHandleEventHook
+      -- borders
       , borderWidth = myBorderWidth
       , normalBorderColor  = myNormalBorderColor
       , focusedBorderColor = myFocusedBorderColor
+      -- no focus change on mouse movement
+      , focusFollowsMouse = False
       } `additionalKeysP` myKeybindings
 
 myTerminal    = "alacritty"
 myModMask     = mod1Mask
 myManageHook  = (namedScratchpadManageHook scratchpads) <+> manageSpawn <+> hookList
   where hookList = composeAll [ isDialog --> doFloat ]
-myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
+myHandleEventHook = Hacks.windowedFullscreenFixEventHook <+> (swallowEventHook (className =? "Alacritty") (return True)) <+> handleEventHook def
 
 -- borders
-myBorderWidth = 3
+myBorderWidth = 2
 myNormalBorderColor  = "#444444"
 myFocusedBorderColor = "#777777"
 
@@ -66,7 +71,7 @@ myKeybindings =
   , ("M-S-s", unGrab *> spawn screenshot)
   ]
 
-myLayoutHook = smartBorders . avoidStruts $ layoutHook def
+myLayoutHook = smartBorders . avoidStruts $ centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid
 
 -- scratchpads
 -- https://eyenx.ch/2020/05/02/using-named-scratchpads-with-xmonad/
