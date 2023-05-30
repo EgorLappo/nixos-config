@@ -14,6 +14,7 @@ import           XMonad.Actions.SpawnOn
 
 import           XMonad.Layout.CenteredIfSingle
 import           XMonad.Layout.Grid
+import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.NoBorders
 import           XMonad.Layout.Spacing
 
@@ -38,10 +39,14 @@ main' dbus = (xmonad . docks . ewmhFullscreen . ewmh) myConfig
     myConfig = def
       { terminal    = myTerminal
       , modMask     = myModMask
+      -- manage hook takes care of scratchpad windows
       , manageHook  = manageHook def <+> myManageHook
       , layoutHook  = myLayoutHook
+      -- log hook for polybar, following https://github.com/gvolpe/nix-config/
       , logHook     = myPolybarLogHook dbus
+      -- set normal cursor, not the "X" one
       , startupHook = setDefaultCursor xC_left_ptr
+      -- this event hook has 1) some hack for chromium apps 2) window swallowing
       , handleEventHook = myHandleEventHook
       -- borders
       , borderWidth = myBorderWidth
@@ -72,10 +77,12 @@ myKeybindings =
   , ("M-w", spawn "chromium")
   , ("M-S-t", namedScratchpadAction scratchpads "htop")
   , ("M-S-s", unGrab *> spawn screenshot)
+  , ("M-f", sendMessage $ Toggle FULL)
   ]
 
 myLayoutHook = smartBorders . smartSpacing 5 . avoidStruts $
-    centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid ||| Full
+    mkToggle (FULL) (centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 Grid)
+    --centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid ||| Full
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
