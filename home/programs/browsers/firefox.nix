@@ -106,10 +106,6 @@ in
   programs.firefox = {
     enable = true;
 
-    package = pkgs.firefox.override {
-      callPackage = p: attrs: pkgs.callPackage p (attrs // { deviceScaleFactor = 2.0; });
-    };
-
     profiles = {
       default = {
         id = 0;
