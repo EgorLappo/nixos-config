@@ -8,11 +8,11 @@ let
   defaultPkgs = with pkgs; [
     any-nix-shell # fish support for nix shell
     bottom # alternative to htop & ytop
-    calibre # e-book reader
     drawio # diagram design
     duf # disk usage/free utility
     exa # a better `ls`
     fd # "find" for files
+    feh # images
     gh # github cli
     glow # terminal markdown viewer
     killall # kill processes by name
