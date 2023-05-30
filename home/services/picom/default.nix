@@ -9,5 +9,11 @@
     fadeDelta = 5;
     shadow = true;
     shadowOpacity = 0.75;
+    settings = {
+      blur =
+        {
+          method = "dual_kawase";
+        };
+    };
   };
 }
