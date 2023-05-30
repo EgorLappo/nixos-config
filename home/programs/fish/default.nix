@@ -39,7 +39,7 @@ let
     bind \t accept-autosuggestion
     set fish_greeting
   '' + fzfConfig + themeConfig + tokyoNightColors;
-  
+
   myPlugins = with pkgs.fishPlugins; [
     { name = "foreign-env"; src = foreign-env.src; }
     { name = "z"; src = z.src; }
@@ -55,7 +55,9 @@ in
       any-nix-shell fish --info-right | source
     '';
     shellAliases = {
+      c = "clear";
       cat = "bat";
+      v = "nvim";
       du = "${pkgs.ncdu}/bin/ncdu --color dark -rr -x";
       ls = "${pkgs.exa}/bin/exa";
       ll = "ls -a";
