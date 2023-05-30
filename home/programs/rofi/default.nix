@@ -5,7 +5,7 @@
     enable = true;
     plugins = with pkgs; [ rofi-calc rofi-emoji ];
     terminal = "${pkgs.alacritty}/bin/alacritty";
-    theme = builtins.readFile ./tokyonight.rasi;
+    theme = ./tokyonight.rasi;
   };
 
   # for rofi-emoji to insert emojis directly
