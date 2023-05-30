@@ -73,7 +73,13 @@ myKeybindings =
   , ("M-S-s", unGrab *> spawn screenshot)
   ]
 
-myLayoutHook = smartBorders . avoidStruts $ centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid
+myLayoutHook = smartBorders . avoidStruts $
+    centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid
+  where
+    tiled = Tall nmaster delta ratio
+    nmaster = 1
+    ratio = 1/2
+    delta = 3/100
 
 -- scratchpads
 -- https://eyenx.ch/2020/05/02/using-named-scratchpads-with-xmonad/
