@@ -90,6 +90,17 @@ in
     extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
+  };
+
+  systemd.services.upower.enable = true;
+
   services = {
     # Network scanners
     avahi = {
@@ -105,6 +116,8 @@ in
 
     # SSH daemon.
     sshd.enable = true;
+
+    blueman.enable = true;
 
     # Enable CUPS to print documents.
     # printing = {
