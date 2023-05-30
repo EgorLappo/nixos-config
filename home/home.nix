@@ -17,7 +17,7 @@ let
     glow # terminal markdown viewer
     killall # kill processes by name
     lnav # log file navigator on the terminal
-    multilockscreen # fast lockscreen based on i3lock
+    betterlockscreen # fast lockscreen based on i3lock
     ncdu # disk space info (a better du)
     nitch # minimal system information fetch
     nix-index # locate packages containing certain nixpkgs
