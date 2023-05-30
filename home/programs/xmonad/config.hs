@@ -1,8 +1,8 @@
 import           XMonad
 
+import           XMonad.Util.Cursor
 import           XMonad.Util.EZConfig
 import           XMonad.Util.Ungrab
-import           XMonad.Util.Cursor
 
 import           XMonad.Hooks.EwmhDesktops
 import           XMonad.Hooks.FadeInactive
@@ -10,6 +10,8 @@ import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
 
 import           XMonad.Actions.SpawnOn
+
+import           XMonad.Layout.NoBorders
 
 -- import for scratchpad
 import qualified XMonad.StackSet             as W
@@ -61,7 +63,7 @@ myKeybindings =
   , ("M-S-s", unGrab *> spawn screenshot)
   ]
 
-myLayoutHook = avoidStruts $ layoutHook def
+myLayoutHook = smartBorders . avoidStruts $ layoutHook def
 
 -- scratchpads
 -- https://eyenx.ch/2020/05/02/using-named-scratchpads-with-xmonad/
