@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   ext = import ./ch_extensions.nix;
 in
