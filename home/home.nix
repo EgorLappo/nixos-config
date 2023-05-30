@@ -26,6 +26,7 @@ let
     prettyping # a nicer ping
     ranger # terminal file explorer
     ripgrep # fast grep
+    shutter # screenshots
     tldr # summary of a man page
     tree # display files in a tree view
     vlc # media player
