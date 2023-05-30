@@ -10,7 +10,7 @@
     enable = true;
 
     script = ''
-      polybar bottom 2>${config.xdg.configHome}/polybar/logs/bottom.log & disown
+      polybar  2>${config.xdg.configHome}/polybar/logs/bottom.log & disown
     '';
   };
 }
