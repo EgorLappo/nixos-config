@@ -42,6 +42,8 @@ let
     "browser.contentblocking.category" = "standard"; # "strict"
     "browser.ctrlTab.recentlyUsedOrder" = false;
 
+    "browser.display.os-zoom-behavior" = "0";
+
     # "browser.download.useDownloadDir" = false;
     "browser.download.viewableInternally.typeWasRegistered.svg" = true;
     "browser.download.viewableInternally.typeWasRegistered.webp" = true;
