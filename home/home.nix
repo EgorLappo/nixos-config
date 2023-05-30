@@ -24,6 +24,9 @@ let
     nix-index # locate packages containing certain nixpkgs
     nix-output-monitor # nom: monitor nix commands
     ouch # painless compression and decompression for your terminal
+    pavucontrol # pulseaudio volume control
+    paprefs # pulseaudio preferences
+    pasystray # pulseaudio systray
     prettyping # a nicer ping
     ranger # terminal file explorer
     ripgrep # fast grep

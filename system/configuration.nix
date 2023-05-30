@@ -84,6 +84,9 @@ in
     pulse.enable = true;
   };
 
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+
   # Scanner backend
   hardware.sane = {
     enable = true;
