@@ -13,9 +13,9 @@
       blur =
         {
           method = "dual_kawase";
-          strength = 8
-          ;
+          strength = 8;
         };
+      corner-radius = 12;
     };
   };
 }
