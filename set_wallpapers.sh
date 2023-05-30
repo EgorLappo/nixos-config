@@ -1,4 +1,4 @@
 #! /usr/bin/env bash
 
 betterlockscreen -u imgs/lock.jpg
-nitrogen --no-recurse  ~/.dotfiles/imgs/nix-wp.png
+nitrogen --no-recurse  ~/.dotfiles/imgs/
