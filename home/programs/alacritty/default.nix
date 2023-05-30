@@ -41,7 +41,7 @@ in
           family = "JetBrainsMono Nerd Font";
           style = "Medium";
         };
-        size = 10;
+        size = 7;
       };
 
       window = {

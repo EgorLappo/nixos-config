@@ -26,6 +26,11 @@ let
 
   userChrome = disableWebRtcIndicator;
 
+  dpiSettings = {
+    "layout.css.devPixelsPerPx" = "-1.0";
+  };
+
+
   # ~/.mozilla/firefox/PROFILE_NAME/prefs.js | user.js
   settings = {
     "app.normandy.first_run" = false;
