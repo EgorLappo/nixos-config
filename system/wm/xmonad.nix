@@ -28,8 +28,20 @@
       };
 
       displayManager = {
-        lightdm.greeters.mini.enable = true;
-        lightdm.greeters.mini.user = "egor";
+        lightdm.background = ~/.dotfiles/imgs/lock.jpg;
+
+        lightdm.greeters.mini = {
+          enable = true;
+          user = "egor";
+          extraConfig = ''
+            [greeter]
+            show-password-label = false
+
+            [greeter-theme]
+            background-color = "#1A1B26"
+            window-color = "#A9B1D6"
+          '';
+        };
 
         defaultSession = "none+xmonad";
       };
