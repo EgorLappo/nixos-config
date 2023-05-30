@@ -15,6 +15,7 @@ import           XMonad.Actions.SpawnOn
 import           XMonad.Layout.CenteredIfSingle
 import           XMonad.Layout.Grid
 import           XMonad.Layout.NoBorders
+import           XMonad.Layout.Spacing
 
 -- import for scratchpad
 import qualified XMonad.StackSet                as W
@@ -73,7 +74,7 @@ myKeybindings =
   , ("M-S-s", unGrab *> spawn screenshot)
   ]
 
-myLayoutHook = smartBorders . avoidStruts $
+myLayoutHook = smartBorders . smartSpacing 10 . avoidStruts $
     centeredIfSingle 0.7 0.8 tiled ||| centeredIfSingle 0.7 0.8 (Mirror tiled) ||| centeredIfSingle 0.7 0.8 Grid
   where
     tiled = Tall nmaster delta ratio

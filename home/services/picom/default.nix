@@ -13,7 +13,8 @@
       blur =
         {
           method = "dual_kawase";
-          strength = 9;
+          strength = 8
+          ;
         };
     };
   };
