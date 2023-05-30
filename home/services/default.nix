@@ -3,4 +3,5 @@ let
 in
 [
   ./picom
+  ./screenlock
 ]
