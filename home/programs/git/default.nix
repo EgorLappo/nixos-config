@@ -10,6 +10,10 @@ let
 
     pull.rebase = false;
     push.autoSetupRemote = true;
+    push.recurseSubmodules = "on-demand";
+
+    submodule.recurse = true;
+
     url = {
       "https://github.com/".insteadOf = "gh:";
       "ssh://git@github.com".pushInsteadOf = "gh:";
@@ -17,8 +21,8 @@ let
       "ssh://git@gitlab.com".pushInsteadOf = "gl:";
     };
 
-    credential.helper = "${ pkgs.git.override {withLibsecret = true; }}/bin/git-credential-libsecret";
-
+    #credential.helper = "${ pkgs.git.override {withLibsecret = true; }}/bin/git-credential-libsecret";
+    credential.helper = "libsecret";
   };
 
   rg = "${pkgs.ripgrep}/bin/rg";
