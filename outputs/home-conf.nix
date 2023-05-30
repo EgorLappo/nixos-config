@@ -42,5 +42,5 @@ let
   );
 in
 {
-  nixos-vm = mkHome { hidpi = true; };
+  egor = mkHome { hidpi = true; };
 }
