@@ -28,6 +28,8 @@
       };
 
       displayManager = {
+        lightdm.greeters.tiny.enable = true;
+
         defaultSession = "none+xmonad";
       };
 
