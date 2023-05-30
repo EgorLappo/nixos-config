@@ -4,6 +4,7 @@ import           XMonad.Util.EZConfig
 import           XMonad.Util.Ungrab
 
 import           XMonad.Hooks.EwmhDesktops
+import           XMonad.Hooks.FadeInactive
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
 
