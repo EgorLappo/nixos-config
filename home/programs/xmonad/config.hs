@@ -12,6 +12,7 @@ import           XMonad.Hooks.WindowSwallowing
 
 import           XMonad.Actions.SpawnOn
 
+import           XMonad.Layout.Grid
 import           XMonad.Layout.NoBorders
 
 -- import for scratchpad
