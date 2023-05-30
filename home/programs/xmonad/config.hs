@@ -9,6 +9,10 @@ main = do
     , modMask     = myModMask
     , borderWidth = myBorderWidth
     }
+  `additionalKeysP`
+  [ ("M-S-l", unGrab *> spawn screenLocker)
+  , ("M-p", spawn appLauncher)
+  ]
 
 myTerminal    = "alacritty"
 myModMask     = mod1Mask
