@@ -52,6 +52,7 @@ in
 [
   ./alacritty
   ./browsers/firefox.nix
+  ./browsers/chromium.nix
   ./git
   ./fish
   ./neofetch
