@@ -58,6 +58,9 @@ in
       c = "clear";
       cat = "bat";
       v = "nvim";
+      nswitch = "sudo nixos-rebuild switch --flake ~/.dotfiles#nixos-vm";
+      hswitch = "home-manager switch --flake ~/.dotfiles";
+
       du = "${pkgs.ncdu}/bin/ncdu --color dark -rr -x";
       ls = "${pkgs.exa}/bin/exa";
       ll = "ls -a";
