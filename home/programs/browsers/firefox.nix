@@ -92,7 +92,7 @@ let
     "security.webauth.webauthn_enable_usbtoken" = true;
 
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-  } // dpiSettings;
+  };
 
 in
 {
