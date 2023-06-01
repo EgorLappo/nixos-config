@@ -1,0 +1,4 @@
+builtins.concat [
+  ./programs
+  ./services
+]

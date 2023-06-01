@@ -46,8 +46,7 @@ in
   programs.home-manager.enable = true;
 
   imports = builtins.concatMap import [
-    ./programs
-    ./services
+    ./common
   ];
 
   xdg = {
