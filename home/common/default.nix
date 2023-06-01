@@ -1,4 +1,4 @@
-builtins.concatLists [
+builtins.concatMap import [
   ./programs
   ./services
 ]
