@@ -31,8 +31,6 @@
   outputs = inputs:
     let
       vm-system = "aarch64-linux";
-
-
     in
     rec {
       nixosConfigurations = {
@@ -59,4 +57,4 @@
             ];
           };
       };
-    }
+    };
