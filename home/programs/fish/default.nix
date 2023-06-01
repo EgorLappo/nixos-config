@@ -33,7 +33,7 @@ let
     set -g  fish_pager_color_selected_background --background=283457
   '';
 
-  custom = pkgs.callPackage ./plugins.nix { };
+  # custom = pkgs.callPackage ./plugins.nix { };
 
   fishConfig = ''
     bind \t accept-autosuggestion
@@ -44,12 +44,13 @@ let
     { name = "foreign-env"; src = foreign-env.src; }
     { name = "z"; src = z.src; }
     { name = "fzf-fish"; src = fzf-fish.src; }
+    { name = "hydro-theme"; src = pkgs.fishPlugins.hydro; }
   ];
 in
 {
   programs.fish = {
     enable = true;
-    plugins = [ custom.theme ] ++ myPlugins;
+    plugins = myPlugins;
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
@@ -72,6 +73,4 @@ in
     };
     shellInit = fishConfig;
   };
-
-  xdg.configFile."fish/completions/keytool.fish".text = custom.completions.keytool;
 }

@@ -14,18 +14,6 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    # Fish shell
-
-    fish-bobthefish-theme = {
-      url = github:gvolpe/theme-bobthefish;
-      flake = false;
-    };
-
-    fish-keytool-completions = {
-      url = github:ckipp01/keytool-fish-completions;
-      flake = false;
-    };
-
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
