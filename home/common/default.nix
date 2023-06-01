@@ -1,4 +1,4 @@
-builtins.concat [
+builtins.concatLists [
   ./programs
   ./services
 ]
