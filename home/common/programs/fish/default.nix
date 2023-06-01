@@ -62,6 +62,7 @@ in
       v = "nvim";
       nswitch = "sudo nixos-rebuild switch --flake ~/.dotfiles#nixos-vm";
       # hswitch = "home-manager switch --flake ~/.dotfiles";
+      mach = "echo ${machine}";
 
       du = "${pkgs.ncdu}/bin/ncdu --color dark -rr -x";
       ls = "${pkgs.exa}/bin/exa";
