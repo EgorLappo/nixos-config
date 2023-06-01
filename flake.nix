@@ -33,12 +33,16 @@
               };
             };
 
+            specialArgs = {
+              inherit inputs;
+            };
+
             modules = [
               ./system/machine/nixos-vm
               ./system/configuration.nix
               home-manager.nixosModules.home-manager
               {
-                home-manager.useGlobalPkgs = true;
+                home-manager. useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users.egor = import home/home.nix;
               }
