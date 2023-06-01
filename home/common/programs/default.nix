@@ -59,7 +59,6 @@ in
   ./neovim-ide
   ./ngrok
   ./rofi
-  ./xmonad
   ./zathura
   more
 ]

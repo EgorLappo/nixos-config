@@ -45,10 +45,6 @@ in
 {
   programs.home-manager.enable = true;
 
-  imports = builtins.concatMap import [
-    ./common
-  ];
-
   xdg = {
     inherit configHome;
     enable = true;
@@ -62,7 +58,6 @@ in
 
     sessionVariables = {
       EDITOR = "nvim";
-      MACHINE = "nixos-vm";
     };
   };
 

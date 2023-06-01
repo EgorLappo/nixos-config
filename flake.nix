@@ -1,5 +1,5 @@
 {
-  description = "gvolpe's Home Manager & NixOS configurations";
+  description = "egor's nixos config";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -8,12 +8,6 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # neovim-flake = {
-    #   url = github:gvolpe/neovim-flake;
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
@@ -38,7 +32,7 @@
             };
 
             modules = [
-              ./system/machine/nixos-vm
+              ./system/machine/vm
               ./system/configuration.nix
               home-manager.nixosModules.home-manager
               {

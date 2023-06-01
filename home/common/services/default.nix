@@ -4,7 +4,6 @@ in
 [
   ./dunst
   ./picom
-  ./polybar
   ./screenlock
   ./udiskie
 ]
