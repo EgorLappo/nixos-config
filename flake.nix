@@ -13,6 +13,7 @@
   outputs = inputs@{ nixpkgs, home-manager, ... }:
     let
       vm-system = "aarch64-linux";
+      lab-dell-system = "x86_64-linux";
     in
     rec {
       nixosConfigurations = {
@@ -38,7 +39,7 @@
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.egor = import home/home.nix;
+                home-manager.users.egor = import home/vm.nix;
               }
             ];
           };
