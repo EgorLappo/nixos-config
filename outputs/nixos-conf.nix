@@ -1,4 +1,4 @@
-{ inputs, system, home-manager, ... }:
+{ inputs, system, ... }:
 
 let
   inherit (inputs.nixpkgs.lib) nixosSystem;
