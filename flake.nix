@@ -31,9 +31,32 @@
   outputs = inputs:
     let
       vm-system = "aarch64-linux";
+
+
     in
     rec {
-      nixosConfigurations =
-        import ./outputs/nixos-conf.nix { inputs = inputs; system = vm-system; };
-    };
-}
+      nixosConfigurations = {
+        nixos-vm = nixpkgs.lib.nixosSystem
+          {
+            system = vm-system;
+
+            pkgs = import inputs.nixpkgs {
+              inherit system;
+              config = {
+                allowUnfree = true;
+              };
+            };
+
+            modules = [
+              ../system/machine/nixos-vm
+              ../system/configuration.nix
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.egor = import home/home.nix;
+              }
+            ];
+          };
+      };
+    }
