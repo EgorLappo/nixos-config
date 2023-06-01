@@ -4,15 +4,6 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    nixpkgs-nautilus-gtk3.url = github:NixOS/nixpkgs?ref=37bd398;
-
-    rycee-nurpkgs = {
-      url = gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nurpkgs.url = github:nix-community/NUR;
-
     home-manager = {
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,10 +30,10 @@
 
   outputs = inputs:
     let
-      system = "aarch64-linux";
+      vm-system = "aarch64-linux";
     in
     rec {
       nixosConfigurations =
-        import ./outputs/nixos-conf.nix { inherit inputs system; };
+        import ./outputs/nixos-conf.nix { inherit inputs; system = vm-system; };
     };
 }

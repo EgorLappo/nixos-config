@@ -17,11 +17,11 @@ in
     modules = [
       ../system/machine/nixos-vm
       ../system/configuration.nix
-      home-manager.nixosModules.home-manager
+      inputs.home-manager.nixosModules.home-manager
       {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.egor = import ../home/home.nix;
+        inputs.home-manager.useGlobalPkgs = true;
+        inputs.home-manager.useUserPackages = true;
+        inputs.home-manager.users.egor = import ../home/home.nix;
       }
     ];
   };
