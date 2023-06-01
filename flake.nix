@@ -28,7 +28,7 @@
 
   };
 
-  outputs = inputs:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
     let
       vm-system = "aarch64-linux";
     in
@@ -38,8 +38,8 @@
           {
             system = vm-system;
 
-            pkgs = import inputs.nixpkgs {
-              inherit system;
+            pkgs = import nixpkgs {
+              system = vm-system;
               config = {
                 allowUnfree = true;
               };
@@ -58,3 +58,4 @@
           };
       };
     };
+}
