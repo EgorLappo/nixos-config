@@ -42,9 +42,6 @@
       system = "aarch64-linux";
     in
     rec {
-      homeConfigurations =
-        import ./outputs/home-conf.nix { inherit inputs system; };
-
       nixosConfigurations =
         import ./outputs/nixos-conf.nix { inherit inputs system; };
     };
