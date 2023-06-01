@@ -46,8 +46,8 @@
             };
 
             modules = [
-              ../system/machine/nixos-vm
-              ../system/configuration.nix
+              ./system/machine/nixos-vm
+              ./system/configuration.nix
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
