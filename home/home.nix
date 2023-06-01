@@ -1,4 +1,4 @@
-{ config, pkgs, machine, ... }:
+{ config, pkgs, ... }:
 
 let
   username = "egor";
@@ -62,6 +62,7 @@ in
 
     sessionVariables = {
       EDITOR = "nvim";
+      MACHINE = "nixos-vm";
     };
   };
 

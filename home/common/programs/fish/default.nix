@@ -60,7 +60,7 @@ in
       cat = "bat --theme=base16";
       bat = "bat --theme=brease16";
       v = "nvim";
-      nswitch = "sudo nixos-rebuild switch --flake ~/.dotfiles#nixos-vm";
+      nswitch = "sudo nixos-rebuild switch --flake ~/.dotfiles#$MACHINE";
       # hswitch = "home-manager switch --flake ~/.dotfiles";
       mach = "echo ${machine}";
 
