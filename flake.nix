@@ -34,6 +34,6 @@
     in
     rec {
       nixosConfigurations =
-        import ./outputs/nixos-conf.nix { inherit inputs; system = vm-system; };
+        import ./outputs/nixos-conf.nix { inputs = inputs; system = vm-system; };
     };
 }
