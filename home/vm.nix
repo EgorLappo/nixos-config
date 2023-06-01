@@ -2,7 +2,7 @@
 
 {
 
-  imports = builtins.concatMap import [
+  imports = [
     ./common
     ./home-common.nix
     ./vm
