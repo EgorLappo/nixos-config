@@ -1,52 +1,5 @@
 {
   "nodes": {
-    "fish-bobthefish-theme": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1640180970,
-        "narHash": "sha256-9uuM5fwWl98uDrTHet4MdVpRZYLIQfW0HOfTxGb2o5o=",
-        "owner": "gvolpe",
-        "repo": "theme-bobthefish",
-        "rev": "e4418e8a7de9fbd6b5053a9b9009aa84a48398cd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gvolpe",
-        "repo": "theme-bobthefish",
-        "type": "github"
-      }
-    },
-    "fish-keytool-completions": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1638013450,
-        "narHash": "sha256-eX9Pg9VcCnx8ofjJcItyf2AFBU90MUgqdpKb+Kv5ARU=",
-        "owner": "ckipp01",
-        "repo": "keytool-fish-completions",
-        "rev": "dcb24bae7b8437e1e1210b00b7172841a26d6573",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ckipp01",
-        "repo": "keytool-fish-completions",
-        "type": "github"
-      }
-    },
-    "flake-utils": {
-      "locked": {
-        "lastModified": 1629284811,
-        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "c5d161cc0af116a2e17f54316f0bf43f0819785c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -82,69 +35,10 @@
         "type": "indirect"
       }
     },
-    "nixpkgs-nautilus-gtk3": {
-      "locked": {
-        "lastModified": 1664989420,
-        "narHash": "sha256-Q8IxomUjjmewsoJgO3htkXLfCckQ7HkDJ/ZhdYVf/fA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "37bd39839acf99c5b738319f42478296f827f274",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "37bd398",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nurpkgs": {
-      "locked": {
-        "lastModified": 1685399230,
-        "narHash": "sha256-7M4ctf5wZ/Ghm40FR8cVWRqoI5Y47/+bFdiRCFzF8ck=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "89a0c73be42ff8bf7d81ce9f90e451569ccff187",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "fish-bobthefish-theme": "fish-bobthefish-theme",
-        "fish-keytool-completions": "fish-keytool-completions",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-nautilus-gtk3": "nixpkgs-nautilus-gtk3",
-        "nurpkgs": "nurpkgs",
-        "rycee-nurpkgs": "rycee-nurpkgs"
-      }
-    },
-    "rycee-nurpkgs": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "dir": "pkgs/firefox-addons",
-        "lastModified": 1685256361,
-        "narHash": "sha256-DF26xdrN7qCqJEdKLN9GiKxBhcf0U56TmIkdzYNjcjM=",
-        "owner": "rycee",
-        "repo": "nur-expressions",
-        "rev": "e62185746f8758e11a2fbca1e08e025f2b57e726",
-        "type": "gitlab"
-      },
-      "original": {
-        "dir": "pkgs/firefox-addons",
-        "owner": "rycee",
-        "repo": "nur-expressions",
-        "type": "gitlab"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

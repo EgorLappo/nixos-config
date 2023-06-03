@@ -10,6 +10,7 @@ let
     bottom # alternative to htop & ytop
     drawio # diagram design
     duf # disk usage/free utility
+    erdtree # a better `tree`
     exa # a better `ls`
     fd # "find" for files
     feh # images

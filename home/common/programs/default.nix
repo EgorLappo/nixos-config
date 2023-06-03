@@ -1,6 +1,8 @@
 let
   more = { pkgs, ... }: {
     programs = {
+      atuin.enable = true;
+
       bat.enable = true;
 
       broot = {
