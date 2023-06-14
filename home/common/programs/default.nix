@@ -25,6 +25,8 @@ let
 
       gpg.enable = true;
 
+      helix.enable = true;
+
       htop = {
         enable = true;
         settings = {

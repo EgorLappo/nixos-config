@@ -8,9 +8,14 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helix-flake = {
+      url = github:helix-editor/helix;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, helix-flake, ... }:
     let
       vm-system = "aarch64-linux";
       lab-dell-system = "x86_64-linux";
@@ -23,6 +28,9 @@
 
             pkgs = import nixpkgs {
               system = vm-system;
+              overlays = [
+                helix-flake.overlays.${vm-system}.default
+              ];
               config = {
                 allowUnfree = true;
               };
@@ -46,10 +54,13 @@
 
         lab-dell = nixpkgs.lib.nixosSystem
           {
-            system = vm-system;
+            system = lab-dell-system;
 
             pkgs = import nixpkgs {
-              system = vm-system;
+              system = lab-dell-system;
+              overlays = [
+                helix-flake.overlays.${lab-dell-system}.default
+              ];
               config = {
                 allowUnfree = true;
               };
