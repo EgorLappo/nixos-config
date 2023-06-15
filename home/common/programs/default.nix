@@ -25,8 +25,6 @@ let
 
       gpg.enable = true;
 
-      helix.enable = true;
-
       htop = {
         enable = true;
         settings = {
@@ -59,6 +57,7 @@ in
   ./browsers/chromium.nix
   ./git
   ./fish
+  ./helix
   ./neofetch
   ./neovim-ide
   ./ngrok
