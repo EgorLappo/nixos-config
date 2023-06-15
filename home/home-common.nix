@@ -58,7 +58,7 @@ in
     packages = defaultPkgs;
 
     sessionVariables = {
-      EDITOR = "hx";
+      EDITOR = "HELIX";
     };
   };
 
