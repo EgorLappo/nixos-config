@@ -1,6 +1,8 @@
 let
   more = { pkgs, ... }: {
     programs = {
+      aria2.enable = true;
+
       atuin.enable = true;
 
       bat.enable = true;
@@ -62,6 +64,7 @@ in
   ./neovim-ide
   ./ngrok
   ./rofi
+  ./tmux
   ./zathura
   more
 ]

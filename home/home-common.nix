@@ -58,7 +58,7 @@ in
     packages = defaultPkgs;
 
     sessionVariables = {
-      EDITOR = "nvim";
+      EDITOR = "hx";
     };
   };
 
