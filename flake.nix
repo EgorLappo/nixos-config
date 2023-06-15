@@ -29,7 +29,7 @@
             pkgs = import nixpkgs {
               system = vm-system;
               overlays = [
-                helix-flake.overlays.${vm-system}.default
+                helix-flake.overlays.default
               ];
               config = {
                 allowUnfree = true;
@@ -59,7 +59,7 @@
             pkgs = import nixpkgs {
               system = lab-dell-system;
               overlays = [
-                helix-flake.overlays.${lab-dell-system}.default
+                helix-flake.overlays.default
               ];
               config = {
                 allowUnfree = true;

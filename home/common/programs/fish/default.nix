@@ -59,7 +59,7 @@ in
       c = "clear";
       cat = "bat --theme=base16";
       bat = "bat --theme=brease16";
-      erd = "erd -H -I -L 3"
+      erd = "erd -H -I -L 3";
       v = "nvim";
       nswitch = "sudo nixos-rebuild switch --flake ~/.dotfiles#$MACHINE";
       # hswitch = "home-manager switch --flake ~/.dotfiles";
