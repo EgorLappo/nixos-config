@@ -33,7 +33,7 @@
         output = "Virtual-1";
         primary = true;
         monitorConfig = ''
-          Option "PreferredMode" "2560x1600"
+          Option "PreferredMode" "3440x1440"
           Option "Position" "0 0"
         '';
       }
