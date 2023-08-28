@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -8,7 +8,8 @@
 
   # Use the GRUB 2 boot loader.
   boot = {
-    initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "sr_mod" ];
+    initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "sr_mod" "ahci" "sd_mod" ];
+    kernelModules = [ "kvm-intel" ];
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = true;

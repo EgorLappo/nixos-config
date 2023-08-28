@@ -122,10 +122,9 @@ in
     blueman.enable = true;
 
     # Enable CUPS to print documents.
-    # printing = {
-    #   enable = true;
-    #   drivers = [ pkgs.epson-escpr ];
-    # };
+    printing = {
+      enable = true;
+    };
   };
 
   # Making fonts accessible to applications.
