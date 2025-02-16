@@ -61,7 +61,6 @@ in
   ./fish
   ./helix
   ./neofetch
-  ./ngrok
   ./rofi
   ./tmux
   ./zathura
