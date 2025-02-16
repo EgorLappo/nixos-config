@@ -11,7 +11,7 @@ let
     drawio # diagram design
     duf # disk usage/free utility
     erdtree # a better `tree`
-    exa # a better `ls`
+    eza # a better `ls`
     fd # "find" for files
     feh # images
     gh # github cli
@@ -53,12 +53,13 @@ in
 
   home = {
     inherit username homeDirectory;
-    stateVersion = "23.05";
+    stateVersion = "24.11";
 
     packages = defaultPkgs;
 
     sessionVariables = {
-      EDITOR = "HELIX";
+      EDITOR = "hx";
+      CARGO_TARGET_DIR = "~/.cargo-target";
     };
   };
 

@@ -61,7 +61,6 @@ in
   ./fish
   ./helix
   ./neofetch
-  ./neovim-ide
   ./ngrok
   ./rofi
   ./tmux
