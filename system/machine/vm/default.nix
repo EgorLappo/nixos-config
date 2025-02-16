@@ -14,9 +14,11 @@
       systemd-boot.enable = true;
       systemd-boot.configurationLimit = 5;
       efi.canTouchEfiVariables = true;
-      efi.efiSysMountPoint = "/boot/efi";
+      # efi.efiSysMountPoint = "/boot/efi";
     };
   };
+  
+  hardware.parallels.enable = true;
 
   networking = {
     hostName = "nixos-vm";

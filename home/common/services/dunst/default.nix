@@ -5,18 +5,18 @@
     enable = true;
     iconTheme = {
       name = "Adwaita";
-      package = pkgs.gnome3.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       size = "16x16";
     };
     settings = {
       global = {
         monitor = 0;
-        geometry = "600x50-50+65";
+        geometry = "800x50-50+65";
         shrink = "yes";
         transparency = 10;
         padding = 16;
         horizontal_padding = 16;
-        font = "JetBrainsMono Nerd Font 10";
+        font = "Fantasque Sans Mono 12";
         line_height = 4;
         format = ''<b>%s</b>\n%b'';
       };

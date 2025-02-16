@@ -5,13 +5,6 @@
 { pkgs, inputs, ... }:
 
 let
-  customFonts = pkgs.nerdfonts.override {
-    fonts = [
-      "JetBrainsMono"
-      "Iosevka"
-    ];
-  };
-
   myfonts = pkgs.callPackage fonts/default.nix { inherit pkgs; };
 in
 {
@@ -84,8 +77,6 @@ in
     pulse.enable = true;
   };
 
-  sound.enable = true;
-
   # Scanner backend
   hardware.sane = {
     enable = true;
@@ -107,7 +98,7 @@ in
     # Network scanners
     avahi = {
       enable = true;
-      nssmdns = true;
+      nssmdns4 = true;
     };
 
     # Enable the OpenSSH daemon.
@@ -128,10 +119,11 @@ in
   };
 
   # Making fonts accessible to applications.
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     fantasque-sans-mono
-    customFonts
     font-awesome
+    iosevka
+    jetbrains-mono
     myfonts.flags-world-color
     myfonts.icomoon-feather
   ];

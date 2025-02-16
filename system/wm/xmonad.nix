@@ -11,15 +11,18 @@
       packages = [ pkgs.dconf ];
     };
 
-    xserver = {
-      enable = true;
-
-      layout = "us";
-
-      libinput = {
+    libinput = {
         enable = true;
         touchpad.disableWhileTyping = true;
       };
+      
+    displayManager.defaultSession = "none+xmonad";
+
+    xserver = {
+      enable = true;
+
+      xkb.layout = "us";
+
 
       displayManager = {
         lightdm.background = ../../imgs/lock.jpg;
@@ -38,7 +41,6 @@
           '';
         };
 
-        defaultSession = "none+xmonad";
       };
 
       windowManager.xmonad = {
